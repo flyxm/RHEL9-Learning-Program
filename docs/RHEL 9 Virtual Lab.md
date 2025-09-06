@@ -43,8 +43,9 @@
 3.  导航到下载部分，然后点击“Download RHEL 9 DVD ISO”。
 4.  将 ISO 文件保存到本地计算机上的已知位置。
 
-![Red Hat Developer Portal 登录界面](<../Screenshots/virtual-lab/00-virtual-lab.png>)
-![下载 RHEL 9 ISO 按钮](<../Screenshots/virtual-lab/01-virtual-lab.png>)
+    ![Red Hat Developer Portal 登录界面](<../Screenshots/virtual-lab/00-virtual-lab.png>)
+
+    ![下载 RHEL 9 ISO 按钮](<../Screenshots/virtual-lab/01-virtual-lab.png>)
 
 ### Step 2: 安装 VMware Workstation Pro
 
@@ -54,93 +55,115 @@
 
 1.  **创建新的虚拟机：**
     *   打开 VMware Workstation Pro，选择“创建新的虚拟机”。
+	
     ![创建新虚拟机向导](<../Screenshots/virtual-lab/02-virtual-lab.png>)
 
 2.  **自定义高级设置：**
     *   选择“自定义(高级)”选项，点击“下一步”。此选项允许您对虚拟机硬件进行更细致的配置。
+	
     ![自定义高级设置选项](<../Screenshots/virtual-lab/03-virtual-lab.png>)
 
 3.  **兼容性选择：**
     *   保持默认选项（通常是最新版本兼容性），点击“下一步”。这确保了虚拟机与当前VMware版本的最佳兼容性。
+	
     ![默认兼容性设置](<../Screenshots/virtual-lab/04-virtual-lab.png>)
 
 4.  **稍后安装操作系统：**
     *   选择“稍后安装操作系统”，点击“下一步”。这样可以先配置虚拟机硬件，再手动引导安装。
+	
     ![稍后安装操作系统选项](<../Screenshots/virtual-lab/05-virtual-lab.png>)
 
 5.  **选择客户机操作系统：**
     *   客户机操作系统选择“Linux”，版本选择“Red Hat Enterprise Linux 9 64位”，点击“下一步”。VMware会根据此选择优化虚拟机设置。
+	
     ![选择 Linux 和 RHEL 9 64位](<../Screenshots/virtual-lab/06-virtual-lab.png>)
 
 6.  **命名虚拟机并选择位置：**
     *   虚拟机名称：`server9`。
     *   位置：`D:\VMs\RHEL9\VMs\server9`（您可以根据您的磁盘空间和组织习惯自定义路径）。点击“下一步”。
+	
     ![命名虚拟机和选择存储位置](<../Screenshots/virtual-lab/07-virtual-lab.png>)
 
 7.  **配置处理器：**
     *   按需选择 CPU 配置（例如，处理器数量和每个处理器的核心数量）。对于大多数实验，2个处理器和1个核心或1个处理器和2个核心已足够。点击“下一步”。
-    ![配置处理器数量和核心](<../Screenshots/virtual-lab/08-virtual-lab.png>)
+    
+	![配置处理器数量和核心](<../Screenshots/virtual-lab/08-virtual-lab.png>)
 
 8.  **配置内存：**
     *   按需选择内存配置（例如，建议至少 2GB 或更多，根据您的物理内存和虚拟机数量调整）。点击“下一步”。
+	
     ![配置虚拟机内存大小](<../Screenshots/virtual-lab/09-virtual-lab.png>)
 
 9.  **网络类型：**
     *   选择“使用网络地址转换(NAT)”，点击“下一步”。NAT模式允许虚拟机通过宿主机访问外部网络，且虚拟机在宿主机网络中是隐藏的。
+	
     ![选择 NAT 网络类型](<../Screenshots/virtual-lab/10-virtual-lab.png>)
 
 10. **I/O 控制器类型：**
     *   选择默认选项（通常是 LSI Logic SAS），点击“下一步”。这通常是最佳兼容性和性能的选择。
+	
     ![默认 I/O 控制器类型](<../Screenshots/virtual-lab/11-virtual-lab.png>)
 
 11. **磁盘类型：**
     *   选择默认选项（通常是 NVMe 或 SCSI），点击“下一步”。根据您的需求和宿主机硬件选择。
+	
     ![默认磁盘类型](<../Screenshots/virtual-lab/12-virtual-lab.png>)
 
 12. **选择磁盘：**
     *   选择“创建新虚拟磁盘”，点击“下一步”。这将为虚拟机创建一个新的虚拟硬盘文件。
+	
     ![创建新虚拟磁盘选项](<../Screenshots/virtual-lab/13-virtual-lab.png>)
 
 13. **指定磁盘容量：**
     *   按需指定磁盘容量（例如，建议至少 40GB 以满足 RHEL 9 安装和后续实验需求），选择“将虚拟磁盘存储为单个文件”（便于管理和移动）。点击“下一步”。
+	
     ![指定虚拟磁盘容量和存储方式](<../Screenshots/virtual-lab/14-virtual-lab.png>)
 
 14. **指定磁盘文件：**
     *   选择默认选项（通常是虚拟机名称的 `.vmdk` 文件），点击“下一步”。
+	
     ![默认虚拟磁盘文件路径](<../Screenshots/virtual-lab/15-virtual-lab.png>)
 
 15. **自定义硬件：**
     *   点击“自定义硬件”按钮。
+	
     ![自定义硬件设置](<../Screenshots/virtual-lab/16-virtual-lab.png>)
 
 16. **移除不必要硬件：**
     *   选择“USB控制器”和“声卡”，点击“移除”按钮。这些设备在服务器虚拟机中通常不需要，移除可以减少资源占用和潜在的安全风险。点击“关闭”。
+	
     ![移除 USB 控制器和声卡](<../Screenshots/virtual-lab/17-virtual-lab.png>)
 
 17. **配置 CD/DVD (SATA)：**
     *   选择“新CD/DVD(SATA)”，勾选“使用ISO映像文件”，浏览并选择您下载的 RHEL 9 ISO 文件（`rhel-9.6-x86_64-dvd.iso`）。这将使虚拟机从ISO文件引导安装。点击“关闭”。
+	
     ![配置 CD/DVD 驱动器为 ISO 映像](<../Screenshots/virtual-lab/18-virtual-lab.png>)
 
 18. **完成虚拟机创建：**
     *   点击“完成”按钮。
+	
     ![完成虚拟机创建向导](<../Screenshots/virtual-lab/19-virtual-lab.png>)
 
 ### Step 4: 安装 RHEL 9
 
 1.  **启动虚拟机：**
     *   通过单击“开启此虚拟机”图标来启动 VM。数秒后，您将看到 RHEL 9 系统安装界面。
+	
     ![启动虚拟机](<../Screenshots/virtual-lab/20-virtual-lab.png>)
 
 2.  **选择安装选项：**
     *   在界面中，`Test this media & install Red Hat Enterprise Linux 9.6` 和 `Troubleshooting` 分别用于校验光盘完整性后再安装以及启动救援模式。此时，通过键盘的方向键选择 `Install Red Hat Enterprise Linux 9.6` 选项直接安装 Linux 系统。
+	
     ![选择安装 RHEL 9.6 选项](<../Screenshots/virtual-lab/21-virtual-lab.png>)
 
 3.  **加载安装镜像：**
     *   接下来按回车键后，系统将开始加载安装镜像，所需时间大约在 20～30 秒，请耐心等待。
+	
     ![安装程序加载界面](<../Screenshots/virtual-lab/22-virtual-lab.png>)
 
 4.  **选择安装语言：**
     *   选择系统的安装语言，推荐选择“English”（英文），单击“Continue”按钮。使用英文界面有助于后续学习和查找资料。
+	
     ![选择安装语言为 English](<../Screenshots/virtual-lab/23-virtual-lab.png>)
 
 5.  **安装概要界面 (INSTALLATION SUMMARY)：**
@@ -149,40 +172,50 @@
         *   **SOFTWARE (软件):** Connect to Red Hat (连接到红帽)、Installation Source (安装源)、Software Selection (软件选择)
         *   **SYSTEM (系统):** Installation Destination (安装目的地)、KDUMP (内核崩溃转储机制)、Network & Host Name (网络和主机名)、Security Profile (安全策略)
         *   **USER SETTINGS (用户设置):** Root Password (管理员帐户)、User Creation (用户帐户)
+		
     ![安装概要界面](<../Screenshots/virtual-lab/24-virtual-lab.png>)
 
 6.  **设置时间和日期：**
     *   单击“Time & Date”按钮，设置系统的时区和时间。在地图上单击中国境内即可显示出上海的当前时间，单击“Done”按钮。
+	
     ![设置时区和时间](<../Screenshots/virtual-lab/25-virtual-lab.png>)
 
 7.  **键盘和语言支持：**
     *   Keyboard 和 Language Support 分别指的是键盘类型和语言支持，这两项默认都是英文的，通常无需修改。单击“Done”按钮。
+	
     ![键盘布局选择](<../Screenshots/virtual-lab/26-virtual-lab.png>)
     ![语言支持选择](<../Screenshots/virtual-lab/27-virtual-lab.png>)
 
 8.  **安装源：**
     *   单击“Installation Source”（指的是系统从哪里获取安装文件）。这里默认是我们的光盘镜像文件，通常无需修改。单击“Done”按钮。
+	
     ![安装源配置](<../Screenshots/virtual-lab/28-virtual-lab.png>)
 
 9.  **软件选择：**
     *   单击“Software Selection”按钮，系统提供 6 种软件基本环境。检查当前模式是默认的 `Server with GUI`（带图形界面的服务器）即可，右侧额外的软件包不要选择，可以在后续学习过程中根据需要安装。单击“Done”按钮。
+	
     ![软件选择界面](<../Screenshots/virtual-lab/29-virtual-lab.png>)
 
 10. **安装目的地：**
     *   单击“Installation Destination”（指的是系统安装到哪个硬盘）。此时仅需确认，通常无需进行任何修改。单击“Done”按钮。
+	
     ![安装目的地选择](<../Screenshots/virtual-lab/30-virtual-lab.png>)
 
 11. **KDUMP 服务配置：**
     *   单击 KDUMP 服务的配置界面。KDUMP 服务用于收集系统内核崩溃数据，但考虑到在实验环境中通常不需要调试内核，建议取消选中 `Enable kdump` 复选框，这可以节省约 160MB 物理内存。随后单击左上角的“Done”按钮。
+	
     ![KDUMP 配置界面](<../Screenshots/virtual-lab/31-virtual-lab.png>)
 
 12. **网络和主机名：**
     *   单击 `NETWORK & HOST NAME` 配置界面。默认网络状态为 ON（开启）。 Host Name（主机名称）修改为 `flyxm.com` 并单击右侧的“Apply”按钮进行确认，这样可以保证后续的命令提示符前缀一致，避免学习上的歧义。也可以手动配置固定 IP，点击 Configure（默认不修改）。单击“Done”按钮。
+	
     ![网络和主机名配置](<../Screenshots/virtual-lab/32-virtual-lab.png>)
+	
     ![网络配置详情](<../Screenshots/virtual-lab/33-virtual-lab.png>) 
 
 13. **安全策略：**
     *   单击 `SECURITY POLICY`。通常在实验环境中暂时不需要配置。单击“Done”按钮。
+	
     ![安全策略配置](<../Screenshots/virtual-lab/34-virtual-lab.png>)
 
 14. **Root 密码设置：**
@@ -190,24 +223,31 @@
     *   不勾选：`Lock root account` 选项来禁用对系统的 root 访问（通常在实验中保持不勾选）。
     *   勾选：`Allow root SSH login with password` 选项，以 root 用户身份启用对此系统的 SSH 访问（使用密码）。默认情况下，基于密码的 SSH root 访问权限是禁用的，勾选此项可启用。
     *   单击“Done”按钮。
+	
     ![Root 密码设置](<../Screenshots/virtual-lab/35-virtual-lab.png>)
 
 15. **用户创建：**
     *   单击 `User Creation` 按钮，为系统创建一个本地的普通用户。该账户的名字叫 `flyxm`，密码统一设置为 `redhat`。
+	
     ![用户创建界面](<../Screenshots/virtual-lab/36-virtual-lab.png>)
 
 16. **开始安装：**
     *   单击“Begin Installation”按钮，开始 RHEL 9 的安装过程。
+	
     ![开始安装按钮](<../Screenshots/virtual-lab/37-virtual-lab.png>)
 
 17. **安装完成并重启：**
     *   安装过程大约持续十几分钟。一切完成后单击右下角的“Reboot”按钮重启系统，使所有配置参数立即生效。
+	
     ![安装进度和完成界面](<../Screenshots/virtual-lab/38-virtual-lab.png>)
+	
     ![重启系统按钮](<../Screenshots/virtual-lab/39-virtual-lab.png>)
 
 18. **登录用户：**
     *   系统重启后，使用您创建的用户（`flyxm`）或 `root` 用户登录，进入 RHEL 9 的图形界面。
+	
     ![登录界面](<../Screenshots/virtual-lab/40-virtual-lab.png>)
+	
     ![RHEL 9 桌面界面](<../Screenshots/virtual-lab/41-virtual-lab.png>)
 
 ### Step 5: 安装后配置
@@ -356,14 +396,17 @@ rhel-9-for-x86_64-appstream-rpms
 1.  **拍摄快照：**
     *   在 VMware Workstation Pro 中，选择您的 RHEL 9 虚拟机。
     *   点击“虚拟机”菜单 -> “快照” -> “拍摄快照”。
+	
     ![拍摄快照菜单](<../Screenshots/virtual-lab/44-virtual-lab.png>)
 
 2.  **填写快照名称及描述信息：**
     *   在弹出的对话框中，为快照输入一个有意义的名称（例如：“RHEL9_Clean_Install”）和描述信息（例如：“RHEL 9 干净安装完成，已注册并更新”）。
     *   点击“拍摄快照”按钮。
+	
     ![填写快照名称和描述](<../Screenshots/virtual-lab/45-virtual-lab.png>)
 
 3.  **查看快照管理器：**
     *   快照拍摄完成后，您可以点击“虚拟机”菜单 -> “快照” -> “快照管理器”来查看、管理和恢复您的快照。
     *   在快照管理器中，您可以选择任何一个快照，然后点击“转到”按钮将虚拟机恢复到该快照时的状态。
+	
     ![查看快照管理器](<../Screenshots/virtual-lab/46-virtual-lab.png>)
