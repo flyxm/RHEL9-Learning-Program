@@ -36,7 +36,7 @@ RHEL9-Learning-Program/
 │   ├── manual_vm_deployment/ # 虚拟机手动部署相关文档
 │   │   └── ...
 │   └── README.md            # `docs`目录的README，说明文档结构和如何使用
-├── ISO/                     # 存放ISO镜像
+├── ISO/                     # 必备 ISO 镜像、安装程序和工具的集中存储库
 │   ├── rhel-9.6-x86_64-dvd.iso
 │   ├──README.md
 ├── Screenshots/             # 存放所有截图
