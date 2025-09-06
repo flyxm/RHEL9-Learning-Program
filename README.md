@@ -38,6 +38,7 @@ RHEL9-Learning-Program/
 │   └── README.md            # `docs`目录的README，说明文档结构和如何使用
 ├── ISO/                     # 存放ISO镜像
 │   ├── rhel-9.6-x86_64-dvd.iso
+│   ├──README.md
 ├── Screenshots/             # 存放所有截图
 │   └── day0/                # 按日期或主题分类的截图子目录
 │       └── ...
