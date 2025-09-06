@@ -23,6 +23,39 @@
 *   **云集成：** 探索RHEL在AWS、Azure、GCP等主流云平台上的部署与管理。
 *   **容器化与虚拟化：** 掌握Podman、Buildah、Kubernetes、OpenShift、KVM、KubeVirt等技术。
 
+## 项目目录结构
+
+```
+RHEL9-Learning-Program/
+├── docs/                    # 所有文档的根目录
+│   ├── daily_plans/         # 每日优化计划文档（Day_01_... Day_90_...）
+│   │   ├── Day_01_Optimized_RHEL_Plan.md
+│   │   ├── Day_02_Optimized_RHEL_Plan.md
+│   │   └── ...
+│   │   └── Day_90_Optimized_RHEL_Plan.md
+│   ├── manual_vm_deployment/ # 虚拟机手动部署相关文档
+│   │   └── ...
+│   └── README.md            # `docs`目录的README，说明文档结构和如何使用
+├── ISO/                     # 存放ISO镜像
+│   ├── rhel-9.6-x86_64-dvd.iso
+├── Screenshots/             # 存放所有截图
+│   └── day0/                # 按日期或主题分类的截图子目录
+│       └── ...
+├── Scripts/                 # 存放所有脚本文件（PowerShell, Shell脚本等）
+│   ├── check-day0.ps1
+│   ├── Day0-Provision.ps1
+│   └── ...
+├── VMs/                     # 存放虚拟机配置文件和磁盘文件
+│   ├── desktop9/
+│   │   └── ...
+│   ├── node9/
+│   │   └── ...
+│   └── server9/
+│       └── ...
+├── LICENSE                  # 项目的许可证文件
+├── README.md                # 项目主README文件
+```
+
 ## 如何使用本计划
 
 所有每日学习计划的详细内容都存放在 `docs/daily_plans/` 目录下。您可以按照日期顺序逐一学习和实践。
