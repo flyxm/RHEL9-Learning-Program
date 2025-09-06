@@ -28,6 +28,7 @@
 ```
 RHEL9-Learning-Program/
 ├── docs/                    # 所有文档的根目录
+│   ├── RHEL 9 Virtual Lab.md #RHEL 9 Virtual Lab.md
 │   ├── daily_plans/         # 每日优化计划文档（Day_01_... Day_90_...）
 │   │   ├── Day_01_Optimized_RHEL_Plan.md
 │   │   ├── Day_02_Optimized_RHEL_Plan.md
