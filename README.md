@@ -23,6 +23,39 @@
 *   **云集成：** 探索RHEL在AWS、Azure、GCP等主流云平台上的部署与管理。
 *   **容器化与虚拟化：** 掌握Podman、Buildah、Kubernetes、OpenShift、KVM、KubeVirt等技术。
 
+## 90 天学习路线
+
+好 ✅
+那我帮你把 **90 天学习计划优化为表格版**，每天明确包含：
+
+* **理论**（要读/要理解的知识点）
+* **实验**（要操作的具体命令、配置或场景）
+* **输出**（要沉淀的成果：笔记/脚本/报告）
+* **面试题**（每天 1–2 个典型问题，锻炼表达能力）
+
+因为表格内容很大（90 天），我会分周输出。
+下面先给出 **Week 1（Day 1–7）** 的完整表格，你确认格式是否合适，再继续展开到 Day 90。
+
+---
+
+# 📅 RHEL 9 专家学习路线（90 天表格版）
+
+## Week 1：系统与基础
+
+| Day | 理论                                                        | 实验                                                    | 输出                                | 面试题                                             |
+| --- | --------------------------------------------------------- | ----------------------------------------------------- | --------------------------------- | ----------------------------------------------- |
+| 1   | Linux 启动流程：BIOS → GRUB2 → kernel → systemd；systemd target | Kickstart 自动安装 3 台 VM；修改 GRUB 默认启动为 multi-user.target | 提交 kickstart.cfg；截图（安装成功+GRUB 配置） | ① 请描述 Linux 启动过程？ ② systemd 和 SysV init 的区别是什么？ |
+| 2   | 文件系统原理：inode、ext4 vs xfs；journaling 日志机制                  | 创建 ext4/xfs/vfat 文件系统；UUID 自动挂载；`tar/rsync` 备份 /home  | 实验报告：《文件系统与挂载》；`df -h` 截图         | ① 为什么生产推荐 UUID 挂载？ ② ext4 和 xfs 的主要区别？          |
+| 3   | Linux 权限模型：DAC、ACL、SUID/SGID/SBIT；sudo 原理                 | 批量创建 50 用户；配置 ACL；设置 sudo 最小权限                        | 提交用户批量脚本；总结 sudo 策略               | ① chmod 4755 和 2755 有何区别？ ② 如何限制用户只能执行某些命令？     |
+| 4   | 调度与进程管理：CFS 调度器、nice/priority；systemd unit 类型             | 写 hello.service；stress 模拟 CPU 负载；用 renice 调整优先级       | service 文件；日志截图                   | ① load average 是如何计算的？ ② systemd 如何处理服务依赖？      |
+| 5   | 包管理：RPM 结构、GPG 签名、DNF 模块流                                 | 搭建本地 YUM 仓库；rpmbuild 打 nginx 包；切换 PHP 版本              | .repo 文件；.rpm 包；实验总结              | ① dnf 模块流解决了什么问题？ ② 如何排查 rpm 缺少依赖？              |
+| 6   | 容器基础：cgroups、namespace；Podman 与 Docker 对比                 | 运行 ubi9 容器；挂载 /srv；buildah 构建 nginx 镜像                | Containerfile；镜像 ID；总结文档          | ① 容器为什么比虚拟机启动快？ ② Podman 与 Docker 有何区别？         |
+| 7   | 周复盘：整合系统+服务+包管理                                           | 脚本一键部署 Web 服务（用户+nginx+fstab+systemd）                 | 周报：《RHEL9 基础环境构建》                 | ① 如何从零搭建一台企业 Web 服务器？                           |
+
+---
+
+
+
 ## 项目目录结构
 
 ```
