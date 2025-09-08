@@ -124,7 +124,7 @@ Linux 启动过程常常被描述为一个「黑箱」，但实际上它由多�
     
     \# 添加一个内核参数
     sudo grubby --update-kernel=<kernel\_path> --args="new\_param=value"
-    # 删除一个内核参数
+    \# 删除一个内核参数
     sudo grubby --update-kernel=<kernel\_path> --remove-args="rhgb quiet"
 
 `grubby`直接修改`grub.cfg`和BLS（Boot Loader Specification）片段，操作更原子化，是企业环境中管理内核引导项的首选。
@@ -355,7 +355,7 @@ Linux flyxm.com 5.14.0-570.39.1.el9_6.x86_64 #1 SMP PREEMPT_DYNAMIC Sat Aug 23 0
 
 * * *
 
-# 🧪 实验部分：Kickstart 自动化安装 & GRUB2 配置
+# 🧪 实验：Kickstart 自动化安装 & GRUB2 配置
 
 * * *
 
@@ -889,68 +889,6 @@ bash setup-kickstart.sh
 *   部署 Kickstart 文件
 *   配置防火墙
 
-* * *
-
-## 3\. 文档模板（实验报告）
-
-建议把每天的学习沉淀成 Markdown 或 Word 报告，格式如下：
-
-**标题**：Day 1 学习报告 – Linux 启动与 Kickstart
-
-**目录结构**：
-
-1.  实验目标
-2.  理论总结
-3.  实验步骤
-4.  配置文件清单
-5.  运行截图（安装界面、grub 配置、systemctl 验证）
-6.  常见问题与解决
-7.  思考题 & 面试题
-8.  收获与反思
-
-示例（片段）：
-
-```
-# Day 1 学习报告 – Linux 启动与 Kickstart
-
-## 实验目标
-- 掌握 Linux 启动流程 (BIOS → GRUB2 → Kernel → systemd)
-- 熟悉 Kickstart 自动化安装
-- 能修改 GRUB2 默认 target
-
-## 理论总结
-Linux 的启动过程分为四个主要阶段...
-(此处省略 2000 字)
-
-## 实验步骤
-1. 安装 httpd
-2. 部署 Kickstart 文件
-3. 通过 PXE 引导进行无人值守安装
-...
-
-```
-
-* * *
-
-## 4\. GitHub 知识库整理方法
-
-为了长期积累，建议把每天的成果推送到 GitHub/GitLab：
-
-目录结构：
-
-```
-rhel-study/
-├── day01-startup-kickstart/
-│   ├── ks.cfg
-│   ├── setup-kickstart.sh
-│   ├── report.md
-│   └── screenshots/
-├── day02-filesystem/
-...
-
-```
-
-这样最终 90 天会形成一个可用的 **开源学习仓库**，不仅是笔记，还包含脚本、配置和文档。
 
 * * *
 
@@ -972,8 +910,6 @@ Linux 启动过程分为 4 个阶段：
 * * *
 
 ### 进阶版回答
-
-更细化的步骤如下：
 
 1.  **BIOS/UEFI**：检查硬件 → 按启动顺序寻找引导扇区。
 2.  **GRUB2**：加载 `/boot/grub2/grub.cfg`，选择内核与 initramfs。
@@ -1136,9 +1072,6 @@ load average 表示系统平均运行队列的长度，通常在 `uptime` 或 `t
 *   如何用 systemd 限制某个服务的负载？  
     👉 使用 `CPUQuota`、`MemoryLimit` 配置 cgroups。
 
-* * *
-
-好 ✅ 我们把 **Day 1 笔记**收尾，写 **总结 & 延伸阅读**。这一部分是知识的沉淀，既能帮你回顾核心点，也能指明未来扩展的学习方向。
 
 * * *
 
@@ -1212,16 +1145,5 @@ load average 表示系统平均运行队列的长度，通常在 `uptime` 或 `t
 *   《How Linux Works, 3rd Edition》
 *   《Red Hat RHCSA/RHCE 9 Cert Guide》
 *   《Linux 内核设计与实现》
-
-* * *
-
-## 5\. 下一步学习预告（Day 2）
-
-明天我们将深入 **Linux 文件系统与挂载管理**：
-
-*   理论：inode、block、ext4 与 xfs 对比、日志机制。
-*   实验：创建不同文件系统、UUID 自动挂载、备份恢复。
-*   输出：文件系统管理脚本、实验报告。
-*   面试题：为什么生产推荐 UUID 挂载？ext4 与 xfs 的主要区别？
 
 * * *
